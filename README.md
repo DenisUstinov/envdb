@@ -21,20 +21,20 @@ from envis import Envis
 env = Envis()
 
 # Create environment variables
-env.create_variable('MY_STRING', str='Hello, World!')
-env.create_variable('MY_INTEGER', int=42)
-env.create_variable('MY_FLOAT', float=3.14)
-env.create_variable('MY_BOOL', bool=True)
-env.create_variable('MY_DICT', dict={'key': 'value'})
-env.create_variable('MY_INCREMENT', i=1)
+env.set_var('MY_STRING', str='Hello, World!')
+env.set_var('MY_INTEGER', int=42)
+env.set_var('MY_FLOAT', float=3.14)
+env.set_var('MY_BOOL', bool=True)
+env.set_var('MY_DICT', dict={'key': 'value'})
+env.set_var('MY_INCREMENT', i=1)
 
 # Retrieve environment variables
-my_string = env.get_variable('MY_STRING')
-my_integer = env.get_variable('MY_INTEGER')
-my_float = env.get_variable('MY_FLOAT')
-my_bool = env.get_variable('MY_BOOL')
-my_dict = env.get_variable('MY_DICT')
-my_increment = env.get_variable('MY_INCREMENT')
+my_string = env.get_var('MY_STRING')
+my_integer = env.get_var('MY_INTEGER')
+my_float = env.get_var('MY_FLOAT')
+my_bool = env.get_var('MY_BOOL')
+my_dict = env.get_var('MY_DICT')
+my_increment = env.get_var('MY_INCREMENT')
 
 print(my_string)  # Output: Hello, World!
 print(my_integer)  # Output: 42
@@ -48,7 +48,7 @@ print(my_increment)  # Output: 1
 
 ### Envis Class
 ```python
-create_variable(name, **kwargs)
+set_var(name, **kwargs)
 ```
 
 Creates an environment variable with the specified name and data type. The keyword arguments determine the data type and value of the variable.
@@ -61,11 +61,11 @@ Supported keyword arguments:
 * bool: Boolean value for the variable.
 * dict: Dictionary value for the variable.
 * i: Incremental value for the variable. The step value can be specified (default: 1).
-* get_variable(name)
+* get_var(name)
 
 Retrieves the value of the specified environment variable.
 
-If the variable was created using create_variable, it returns the stored value.
+If the variable was created using set_var, it returns the stored value.
 If the variable exists in the environment, it returns the value from the environment.
 If the variable doesn't exist, it returns None.
 _process_increment_variable(name, step=1)
