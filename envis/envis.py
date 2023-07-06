@@ -5,7 +5,7 @@ class Envis:
     def __init__(self):
         self.env_dict = {}
 
-    def create_env_variable(self, name, **kwargs):
+    def create_variable(self, name, **kwargs):
         if len(kwargs) != 1:
             raise ValueError("Only one keyword argument should be provided.")
 
@@ -27,7 +27,7 @@ class Envis:
 
         os.environ[name] = self.env_dict[name]
 
-    def get_env_variable(self, name):
+    def get_variable(self, name):
         if name in self.env_dict:
             value = self.env_dict[name]
             if value.startswith('int='):

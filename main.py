@@ -6,20 +6,20 @@ if __name__ == '__main__':
     env = Envis()
 
     # Create environment variables
-    env.create_env_variable('MY_STRING', str='Hello, World!')
-    env.create_env_variable('MY_INTEGER', int=42)
-    env.create_env_variable('MY_FLOAT', float=3.14)
-    env.create_env_variable('MY_BOOL', bool=True)
-    env.create_env_variable('MY_DICT', dict={'key': 'value'})
-    env.create_env_variable('MY_INCREMENT', i=1)
+    env.create_variable('MY_STRING', str='Hello, World!')
+    env.create_variable('MY_INTEGER', int=42)
+    env.create_variable('MY_FLOAT', float=3.14)
+    env.create_variable('MY_BOOL', bool=True)
+    env.create_variable('MY_DICT', dict={'key': 'value'})
+    env.create_variable('MY_INCREMENT', i=1)
 
     # Retrieve environment variables
-    my_string = env.get_env_variable('MY_STRING')
-    my_integer = env.get_env_variable('MY_INTEGER')
-    my_float = env.get_env_variable('MY_FLOAT')
-    my_bool = env.get_env_variable('MY_BOOL')
-    my_dict = env.get_env_variable('MY_DICT')
-    my_increment = env.get_env_variable('MY_INCREMENT')
+    my_string = env.get_variable('MY_STRING')
+    my_integer = env.get_variable('MY_INTEGER')
+    my_float = env.get_variable('MY_FLOAT')
+    my_bool = env.get_variable('MY_BOOL')
+    my_dict = env.get_variable('MY_DICT')
+    my_increment = env.get_variable('MY_INCREMENT')
 
     print(my_string)  # Output: Hello, World!
     print(my_integer)  # Output: 42
